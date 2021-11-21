@@ -27,13 +27,13 @@ jobs:
     - run: npm test
 
     - name: Deploy to my EC2 instance
-        uses: easingthemes/ssh-deploy@v2.1.5
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-          SOURCE: "./"
-          REMOTE_HOST: "ec2-52-90-24-203.compute-1.amazonaws.com"
-          REMOTE_USER: "ubuntu"
-          TARGET: "~/demo123"
+      uses: easingthemes/ssh-deploy@v2.1.5
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+        SOURCE: "./"
+        REMOTE_HOST: "ec2-52-90-24-203.compute-1.amazonaws.com"
+        REMOTE_USER: "ubuntu"
+        TARGET: "~/demo123"
  
 
   # deploy:
