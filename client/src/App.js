@@ -12,7 +12,6 @@ function App() {
 
  const getRemoteData = async () => {
     const base_url = 'http://localhost:4000' || process.env.REACT_APP_BASE_URL;
-    console.log(process.env);
     const data = await axios.get(`${base_url}/data`);
     return data;
   }
