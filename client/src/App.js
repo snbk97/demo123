@@ -3,9 +3,11 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const [data, setData] = useState(null);
-  useEffect(async () => {
-    const data = await getRemoteData();
-    setData(data.data);
+  useEffect(() => {
+    (async()=>{
+      const data = await getRemoteData();
+      setData(data.data);
+    })()
   },[])
 
  const getRemoteData = async () => {
