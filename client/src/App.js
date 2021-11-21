@@ -10,8 +10,12 @@ function App() {
     })()
   },[])
 
+  useEffect(() => {
+    console.log('process', process.env)
+  })
+
  const getRemoteData = async () => {
-    const base_url = 'http://localhost:4000' || process.env.REACT_APP_BASE_URL;
+    const base_url =  process.env.REACT_APP_BASE_URL || 'http://localhost:4000/data';
     const data = await axios.get(`${base_url}/data`);
     return data;
   }
